@@ -4,6 +4,9 @@ This is an extension for the MagicMirror. It will show concerts in the area you 
 
 ![alt text](https://github.com/muilpp/MM-concert-calendar/blob/master/mm%20concerts%20calendar.png?raw=true)
 
+# Features
+Don't miss any concert of the bands you love the most, ever again!
+This module shows the concerts of the bands you listen to in your favourite App in your MM. They are sorted by date and you'll see the name of the band and city they play in. It supports pagination in case the list is too long so it will show a page the amount of time you configure (20 seconds by default) and change to the next one after.
 
 # Future State of Affairs
 The installation and configuration of this module is, currently, quite tedious. Ideally in the near future it will be simplified quite a lot, via Docker maybe? For now, you'll probably need some IT skills to succeed. Anyway, feel free to contribute in the process.
