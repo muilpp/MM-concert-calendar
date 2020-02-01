@@ -19,11 +19,11 @@ Module.register("concertcalendar",{
 		animationSpeed: 2000,
 		fade: true,
 		fadePoint: 0.25, // Start on 1/4th of the list.
-    	initialLoadDelay: 0, // start delay seconds.
+		initialLoadDelay: 0, // start delay seconds.
 
-		apiBase: 'http://localhost:8282/concerts',
-		area: "28714",
-		user: "uilp23",
+		apiBase: 'http://localhost:8282/allConcertsAllUsers',
+		firstUser: "nana1806",
+		secondUser: "uilp23",
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
@@ -72,7 +72,7 @@ Module.register("concertcalendar",{
 			var row = document.createElement("tr");
 			table.appendChild(row);
 
-      		var concertArtistCell = document.createElement("td");
+			var concertArtistCell = document.createElement("td");
 			concertArtistCell.className = "from";
 			concertArtistCell.innerHTML = concert.artist;
 			row.appendChild(concertArtistCell);
@@ -130,8 +130,8 @@ Module.register("concertcalendar",{
 	 */
 	getParams: function() {
 		var params = "/";
-                params += this.config.area;
-                params += "/" + this.config.user;
+                params += this.config.firstUser;
+                params += "/" + this.config.secondUser;
                 params += "?limit=" + this.config.maximumArtist;
 
 		return params;
@@ -173,7 +173,7 @@ Module.register("concertcalendar",{
 		this.updateDom(this.config.animationSpeed);
 	},
 
-	paginate: function() { 
+	paginate: function() {
 		this.paginationIndex = this.paginationIndex + this.config.concertsPerPage;
 
 		if (this.concerts.length > this.paginationIndex) {
