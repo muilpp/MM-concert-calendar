@@ -19,11 +19,11 @@ Module.register("concertcalendar",{
 		animationSpeed: 2000,
 		fade: true,
 		fadePoint: 0.25, // Start on 1/4th of the list.
-    	initialLoadDelay: 0, // start delay seconds.
+		initialLoadDelay: 0, // start delay seconds.
 
 		apiBase: 'http://localhost:8282/concerts',
-		area: "28714",
-		user: "uilp23",
+		area: "28714", //your songkick area here (Barcelona, Spain by default)
+		user: "",	//your lastfm username here
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
@@ -72,7 +72,7 @@ Module.register("concertcalendar",{
 			var row = document.createElement("tr");
 			table.appendChild(row);
 
-      		var concertArtistCell = document.createElement("td");
+			var concertArtistCell = document.createElement("td");
 			concertArtistCell.className = "from";
 			concertArtistCell.innerHTML = concert.artist;
 			row.appendChild(concertArtistCell);
