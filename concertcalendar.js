@@ -162,7 +162,7 @@ Module.register("concertcalendar",{
 				this.concerts.push({
 					artist: artistToAdd.trim(),
 					city: cityToAdd.trim(),
-					concertDate: date.getDate()+"/"+date.getMonth()
+					concertDate: date.getDate()+"/"+(date.getMonth()+1)
 				});
 			}
 		});
