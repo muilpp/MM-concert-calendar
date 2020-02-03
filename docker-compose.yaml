@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  conocert-api:
+    image: muilpp/concert-api:latest
+    network_mode: "host"
+    ports: 
+      - 8282
+      - 80
+    command: >
+      sh -c "cd concert-schedules && 
+             echo $LASTFM_KEY > LastFMApiKey.txt &&
+             echo $SONGKICK_KEY > SongKickApiKey.txt &&
+             ./concert-schedules"
+
