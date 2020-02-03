@@ -60,8 +60,8 @@ This module fetches the data from last.fm, which gets your data from the device 
 ```
 
 ### Installation with Docker
-  Make sure you completed the first 3 steps from the previous section, as you will need them to have this module completely functional. Once you are done, and assuming you already have Docker and docker compose installed:
-  - In the directory where you cloned the github repo in, run (replacing both keys with yours)
+  Make sure you completed the first 3 steps from the previous section, as you will need them to have this module fully operational. Once you are done, and assuming you already have Docker and docker compose installed:
+  - In the directory where you cloned the github repo, run (replacing both keys with yours)
 ```
   LASTFM_KEY=YOUR_LAST_FM_KEY SONGKICK_KEY=YOUR_SONGKICK_KEY docker-compose up
 ```
