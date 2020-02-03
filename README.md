@@ -40,7 +40,7 @@ This module fetches the data from last.fm, which gets your data from the device 
 	    }
     ]	
 ```
-   Now, if you are a Docker fan, skip to the Docker section, if not, continue to the next step where you'll install Go.
+   __Now, if you are a Docker fan, skip to the Docker section.__ If not, continue to the next step.
    
    4. Install [Golang](https://golang.org/doc/install)
    5. Execute __git clone https://github.com/muilpp/concert-schedules.git__ into a directory of your choice navigate into the directory that just appeared. Inside, run 
