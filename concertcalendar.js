@@ -78,12 +78,12 @@ Module.register("concertcalendar",{
 			row.appendChild(concertArtistCell);
 
 			var concertCityCell = document.createElement("td");
-			concertCityCell.innerHTML = " - " + concert.city.trim();
+			concertCityCell.innerHTML = " - " + concert.city.trim()+", ";
 			concertCityCell.className = "align-right trainto";
 			row.appendChild(concertCityCell);
 
 			var concertDate = document.createElement("td");
-			concertDate.innerHTML = ", " + concert.concertDate;
+			concertDate.innerHTML = concert.concertDate;
 			concertDate.className = "align-right trainto";
 			row.appendChild(concertDate);
 		}
