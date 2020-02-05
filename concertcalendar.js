@@ -1,5 +1,3 @@
-/* Timetable for Trains Module */
-
 /* Magic Mirror
  * Module: ConcertCalendar
  *
@@ -12,10 +10,10 @@ Module.register("concertcalendar",{
 
 	// Define module defaults
 	defaults: {
-		maximumArtist: 150, // Total Maximum of artists to query in the API
+		maximumArtist: 150, // Number of bands to check if they are on tour
 		concertsPerPage: 8,
 		updateInterval: 60 * 60 * 24 * 1000, // Once a day.
-		paginationInterval: 20 * 1000, // Every five seconds.
+		paginationInterval: 20 * 1000, // Every twenty seconds.
 		animationSpeed: 2000,
 		fade: true,
 		fadePoint: 0.25, // Start on 1/4th of the list.
@@ -23,7 +21,7 @@ Module.register("concertcalendar",{
 
 		apiBase: 'http://localhost:8282/concerts',
 		area: "28714", //your songkick area here (Barcelona, Spain by default)
-		user: "",	//your lastfm username here
+		user: "",.     //your lastfm username here
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
