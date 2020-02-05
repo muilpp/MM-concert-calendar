@@ -1,6 +1,6 @@
 # Magic Mirror Concert Calendar
 
-This is an extension for the MagicMirror. It will show concerts in the area you selected for the bands you listen to the most. Here goes a screenshot to get an idea of how it looks like:
+This is an extension for the MagicMirror. It will show concerts in the area you selected for the bands you listen to the most.
 
 ![alt text](https://github.com/muilpp/MM-concert-calendar/blob/master/mm%20concerts%20calendar.png?raw=true)
 
