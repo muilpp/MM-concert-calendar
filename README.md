@@ -28,7 +28,7 @@ This module fetches the data from last.fm, which gets your data from the device 
 ```
     git clone https://github.com/muilpp/MM-concert-calendar.git
 ```
-  A new folder will appear, navigate into it and open concertcalendar.js. Paste the id value you copied in the previous step inside the property named area. Also add the username and lastFM keys below.
+  A new folder will be created. Inside, edit the file concertcalendar.js and paste the id value you copied in the previous step to the property named area. Also add the username and lastFM key below it.
 
   3. Add, to the modules array, in the config/config.js file:
 ```
