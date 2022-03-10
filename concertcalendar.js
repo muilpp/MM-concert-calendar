@@ -20,8 +20,9 @@ Module.register("concertcalendar",{
 		initialLoadDelay: 0, // start delay seconds.
 
 		apiBase: 'http://localhost:8282/concerts',
-		area: "28714", //your songkick area here (Barcelona, Spain by default)
-		user: "",.     //your lastfm username here
+		area: "28714", 	// Songkick area here (Barcelona, Spain by default)
+		user: "",     	// Lastfm username here
+		lastFmKey: "",	// Lastfm API key here
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
@@ -130,6 +131,7 @@ Module.register("concertcalendar",{
 		var params = "/";
                 params += this.config.area;
                 params += "/" + this.config.user;
+				params += "/" + this.config.lastFmKey;
                 params += "?limit=" + this.config.maximumArtist;
 
 		return params;
