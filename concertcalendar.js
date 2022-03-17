@@ -19,10 +19,10 @@ Module.register("concertcalendar",{
 		fadePoint: 0.25, // Start on 1/4th of the list.
 		initialLoadDelay: 0, // start delay seconds.
 
-		apiBase: 'http://localhost:8282/concerts',
-		area: "28714", 	// Songkick area here (Barcelona, Spain by default)
-		user: "",     	// Lastfm username here
-		lastFmKey: "",	// Lastfm API key here
+		apiBase: 'http://localhost:8282/allConcerts',
+		area: "28714,28480,28539,28604,28540,56332,28796", // Songkick areas (comma separated)
+        user: "",     // Lastfm username
+        lastFmKey: "", // Lastfm API key
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
@@ -129,10 +129,10 @@ Module.register("concertcalendar",{
 	 */
 	getParams: function() {
 		var params = "/";
-                params += this.config.area;
-                params += "/" + this.config.user;
-				params += "/" + this.config.lastFmKey;
-                params += "?limit=" + this.config.maximumArtist;
+		params += this.config.user;
+		params += "/" + this.config.lastFmKey;
+		params += "/" + this.config.area;
+		params += "?limit=" + this.config.maximumArtist;
 
 		return params;
 	},
