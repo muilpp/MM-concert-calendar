@@ -28,13 +28,13 @@ This module fetches the data from last.fm, which gets your data from the device 
 ```
     git clone https://github.com/muilpp/MM-concert-calendar.git
 ```
-  A new folder will appear, navigate into it and open concertcalendar.js. Paste the id value you copied in the previous step inside the property named area and add your username in the property right below it.
+  A new folder will be created. Inside, edit the file concertcalendar.js and paste the id value you copied in the previous step to the property named area. Also add the lastFM username and key below it.
 
   3. Add, to the modules array, in the config/config.js file:
 ```
     modules: [
 	    {
-		    module: "concertcalendar",
+		    module: "MM-concert-calendar",
 		    position: "top_right",
 		    header: "Upcoming Concerts Calendar"
 	    }
@@ -63,7 +63,7 @@ This module fetches the data from last.fm, which gets your data from the device 
   Make sure you completed the first 3 steps from the previous section, as you will need them to have this module fully operational. Once you are done, and assuming you already have Docker and docker compose installed:
   - In the directory where you cloned the github repo, run (replacing both keys with yours)
 ```
-  LASTFM_KEY=YOUR_LAST_FM_KEY SONGKICK_KEY=YOUR_SONGKICK_KEY docker-compose up
+  SONGKICK_KEY=YOUR_SONGKICK_KEY docker-compose up
 ```
   If it's the first time you run it it will take quite a while, but don't worry, the following times it will be much faster. Now you should have the service running on port 8282 and ready to handle the request of your mirror. You will probably need this to be run on startup, so one approach would be to have a little shell script that executes this command from your [crontab file](https://help.ubuntu.com/community/CronHowto).
 
