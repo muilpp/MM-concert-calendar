@@ -34,7 +34,7 @@ This module fetches the data from last.fm, which gets your data from the device 
 ```
     modules: [
 	    {
-		    module: "concertcalendar",
+		    module: "MM-concert-calendar",
 		    position: "top_right",
 		    header: "Upcoming Concerts Calendar"
 	    }
