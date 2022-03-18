@@ -48,7 +48,11 @@ This module fetches the data from last.fm, which gets your data from the device 
     env GOOS=linux GOARCH=arm GOARM=5 go build
 ```
    6. You should see now a new runnable file. If you run it, it will listen for querys on the port 8282, so make sure it's available for it. This file should be triggered everytime the raspberry starts or reboots so it would make sense to add it in your crontab file. (as you probably already did for the magic mirror). 
-   7. The last step is to create a folder in the root of your project called __keys__. Inside, create two files called __LastFMApiKey.txt__ and __SongKickApiKey.txt__. Now, paste the API key of each website inside of each file. Make sure, when running your crontab command, that the directory you run it from is the same as the one where these two files and the runnable file are. The best you could do is create a small shell script like this one and run it from crontab afterwards:
+   7. The last step is to create a file in the same directory where the runnable is, call it __credentials.env__. In it, write:
+```
+   SONG_KICK_API_KEY=[YOUR_SONGKICK_KEY_HERE]
+```
+   Make sure, when running your crontab command, that the directory you run it from is the same as the one where these two files and the runnable file are. The best you could do is create a small shell script like this one and run it from crontab afterwards:
 ```
     #startUpScript.sh
     cd /path/to/your/directory
