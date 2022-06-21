@@ -1,7 +1,7 @@
 /* Magic Mirror
  * Module: ConcertCalendar
  *
- * By Marc Pratllusà https://github.com/muilpp
+ * By Marc PratllusÃ  https://github.com/muilpp
  * based on a Script from Benjamin Angst http://www.beny.ch
  * MIT Licensed.
  */
@@ -10,8 +10,8 @@ Module.register("concertcalendar",{
 
 	// Define module defaults
 	defaults: {
-		maximumArtist: 150, // Number of bands to check if they are on tour
-		concertsPerPage: 8,
+		//maximumArtist: 350, // Number of bands to check if they are on tour
+		concertsPerPage: 12,
 		updateInterval: 60 * 60 * 24 * 1000, // Once a day.
 		paginationInterval: 20 * 1000, // Every twenty seconds.
 		animationSpeed: 2000,
@@ -19,10 +19,8 @@ Module.register("concertcalendar",{
 		fadePoint: 0.25, // Start on 1/4th of the list.
 		initialLoadDelay: 0, // start delay seconds.
 
-		apiBase: 'http://localhost:8282/allConcerts',
-		area: "28714,28480,28539,28604,28540,56332,28796", // Songkick areas (comma separated)
-        user: "",     // Lastfm username
-        lastFmKey: "", // Lastfm API key
+		apiBase: 'http://localhost:8092/concerts/lastfmUser/lastfmKey/latitude/longitude?bandsLimit=limit',
+
 
 		titleReplace: {
 			"Upcoming Concerts Calendar ": ""
@@ -94,7 +92,7 @@ Module.register("concertcalendar",{
 	 * Calls processConcerts on succesfull response.
 	 */
 	updateTimetable: function() {
-		var url = this.config.apiBase + this.getParams();
+		var url = this.config.apiBase; //+ this.getParams();
 		var self = this;
 		var retry = true;
 
@@ -128,14 +126,14 @@ Module.register("concertcalendar",{
 	 * return String - URL params.
 	 */
 	getParams: function() {
-		var params = "/";
-		params += this.config.user;
-		params += "/" + this.config.lastFmKey;
-		params += "/" + this.config.area;
-		params += "?limit=" + this.config.maximumArtist;
+                var params = "/";
+                params += this.config.user;
+                params += "/" + this.config.lastFmKey;
+                params += "/" + this.config.area;
+                params += "?limit=" + this.config.maximumArtist;
 
-		return params;
-	},
+                return params;
+        },
 
 	/* processConcerts(data)
 	 * Uses the received data to set the various values.
@@ -147,24 +145,28 @@ Module.register("concertcalendar",{
 		this.concerts = [];
 
 		data.forEach((concert) => {
-			var city = concert.City.split(",");
+//console.log(concert.city);
+		if (concert.city !== null) {
+			var city = concert.city.split(",");
+
 
 			if (city.length > 0) {
 				cityToAdd = city[0];
 				if (city[0].length > 9)
 					cityToAdd = city[0].substring(0,9)+"..";
 
-				artistToAdd = concert.Artist;
-				if (artistToAdd.length > 10)
-					artistToAdd = artistToAdd.substring(0,10)+"..";
+				artistToAdd = concert.artist;
+				if (artistToAdd.length > 17)
+					artistToAdd = artistToAdd.substring(0,17)+"..";
 
-				var date = new Date(concert.Date);
+				var date = new Date(concert.date);
 				this.concerts.push({
 					artist: artistToAdd.trim(),
 					city: cityToAdd.trim(),
 					concertDate: date.getDate()+"/"+(date.getMonth()+1)
 				});
 			}
+		}
 		});
 
 		this.loaded = true;
